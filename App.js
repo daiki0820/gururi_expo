@@ -43,12 +43,14 @@ export default App = () => {
         }}
       >
         {/* 現在地マーカー */}
-        <Marker
-          coordinate={{
-            latitude: region.latitude,
-            longitude: region.longitude,
-          }}
-        ></Marker>
+        {currentLocation && (
+          <Marker
+            coordinate={{
+              latitude: currentLocation.coords.latitude,
+              longitude: currentLocation.coords.longitude,
+            }}
+          ></Marker>
+        )}
       </MapView>
 
       <View>
